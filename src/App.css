@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#main{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.page-header{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.page-header .page-title{
+  font-size: 26px;
+  display: inline-block;
+}
+
+.page-header .header-link{
+  text-decoration: none;
+  float: right;
+}
+
+.group .group-icon{
+  margin-right: 60px;
+}
+
+.group .group-name{
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.group .group-info{
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.group .group-completion{
+  color: #aaa;
+}
+
+.list{
+  border-top: 1px solid #ddd;
+}
+
+.list .list-item{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.list .list-item.locked{
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.list .list-item.locked .task-description{
+  margin-left: 5.25px;
+}
+
+.list .completed .task-description{
+  text-decoration: line-through;
+}
+
+.task-checkbox{
+  height: 21px;
+  display: inline-block;
+  margin-right: 60px;
+}
+
+.task-description{
+  display: inline-block;
+}
