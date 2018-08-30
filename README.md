@@ -38,6 +38,44 @@
       error: {message}
 
 
+## Friends
+  ### index
+    method: GET
+    path: /friends
+    request: {}
+    response: 
+      success: [{user_id, name, email, pending, user_friend_id}, {user_id, name, email, pending, user_friend_id}]
+      error: {message}
+  ### show
+    method: GET
+    path: /friends/:user_id
+    request: {}
+    response: 
+      success: {user_id, name, email, pending, user_friend_id}
+      error: {message}
+  ### create
+    method: POST
+    path: /friends
+    request: {user_id}
+    response: 
+      success: {message}
+      error: {message}
+  ### update
+    method: PATCH
+    path: /friends/:user_friend_id
+    request: {accepted}
+    response: 
+      success: {message}
+      error: {message}
+  ### destroy
+    method: DELETE
+    path: /friends/:user_id
+    request: {}
+    response:
+      success: {message}
+      error: {message}
+
+
 
 ## TaskGroups
 
@@ -166,6 +204,7 @@ CREATE TABLE UserFriends (
   Id int NOT NULL AUTO_INCREMENT,
   UserId int NOT NULL,
   FriendId int NOT NULL,
+  Pending BIT DEFAULT 1,
   FOREIGN KEY (UserId) REFERENCES User(id),
   FOREIGN KEY (FriendId) REFERENCES User(id)
 );

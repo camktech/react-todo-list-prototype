@@ -8,6 +8,7 @@ CREATE TABLE UserFriends (
   Id int NOT NULL AUTO_INCREMENT,
   UserId int NOT NULL,
   FriendId int NOT NULL,
+  Pending BIT DEFAULT 1,
   FOREIGN KEY (UserId) REFERENCES User(id),
   FOREIGN KEY (FriendId) REFERENCES User(id)
 );
