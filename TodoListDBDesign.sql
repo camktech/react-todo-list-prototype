@@ -4,6 +4,14 @@ CREATE TABLE User (
   Email varchar(100) NOT NULL UNIQUE
 );
 
+CREATE TABLE UserFriends (
+  Id int NOT NULL AUTO_INCREMENT,
+  UserId int NOT NULL,
+  FriendId int NOT NULL,
+  FOREIGN KEY (UserId) REFERENCES User(id),
+  FOREIGN KEY (FriendId) REFERENCES User(id)
+);
+
 CREATE TABLE TaskGroup (
   Id int NOT NULL AUTO_INCREMENT,
   Description varchar(255) NOT NULL,

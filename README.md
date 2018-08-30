@@ -148,11 +148,26 @@
 
 # SQL Design
 
+******************************************************************************
+
+  TaskGroups can be assigned to other users (in UserFriends), and have ownership transferred after creation.
+  A TaskGroup can have tasks that are assigned to various users (in UserFriends), the tasks can be transferred as well
+
+******************************************************************************
+
 ```sql
 CREATE TABLE User (
   Id int NOT NULL AUTO_INCREMENT,
   Name varchar(255) NOT NULL,
   Email varchar(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE UserFriends (
+  Id int NOT NULL AUTO_INCREMENT,
+  UserId int NOT NULL,
+  FriendId int NOT NULL,
+  FOREIGN KEY (UserId) REFERENCES User(id),
+  FOREIGN KEY (FriendId) REFERENCES User(id)
 );
 
 CREATE TABLE TaskGroup (
