@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Task from './Task';
 import List from './List';
 import PageHeader from './PageHeader';
 import TasksService from '../services/Tasks';
@@ -51,7 +50,7 @@ class GroupTasks extends Component {
   componentDidMount() {
     TasksService.all()
     .then((tasks) => {
-      let currentTasks = tasks.filter((t) => { return t.group == this.currentGroup()});
+      let currentTasks = tasks.filter((t) => { return t.group === this.currentGroup()});
       this.setState({allTasks: tasks});
       this.setLockedTasks(currentTasks);
     });

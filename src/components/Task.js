@@ -31,7 +31,7 @@ class Task extends Component{
   render(){
     return (
       <div className={this.taskElementClass()} onClick={this.handleTaskClick.bind(this)}>
-        <img className='task-checkbox' src={this.props.task.icon}/>
+        <img className='task-checkbox' src={this.props.task.icon} alt="task icon"/>
         <div className='task-description'>{this.props.task.task}</div>
       </div>
     );

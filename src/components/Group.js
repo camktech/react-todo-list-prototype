@@ -8,7 +8,7 @@ class Group extends Component{
       <Link to={`/${this.props.group.groupName}`}>
         <div className='group list-item'>
 
-          <img className='group-icon' src={groupCarrot}/>
+          <img className='group-icon' src={groupCarrot}  alt="group icon"/>
           <div className='group-info'>    
             <div className='group-name'>
               {this.props.group.groupName}
