@@ -37,7 +37,66 @@ Users
 
 
 
+TaskGroups
+
+******************************************************************************
+
+  Concerning TaskGroups#create & TaskGroups#update: 
+  when request include a non-nil :owner_id, 
+  the group will be assigned to the given User, 
+  else assigned to the current user 
+
+******************************************************************************
+
+  index
+    method: GET
+    path: /task_groups
+    request: {}
+    response: 
+      success: [{id, description, owner_id, user_ids}, {id, description, owner_id, user_ids}]
+      error: {message}
+  show
+    method: GET
+    path: /task_groups/:d
+    request: {}
+    response: 
+      success: {id, description, owner_id, user_ids}
+      error: {message}
+  create
+    method: POST
+    path: /task_groups
+    request: {description, owner_id = nil, user_ids}
+    response:
+      success: {id, description, owner_id, user_ids}
+      error: {message}
+  update
+    method: PATCH
+    path: /task_groups/:id
+    request: {description, owner_id = nil, user_ids}
+    response:
+      success: {id, description, owner_id, user_ids}
+      error: {message}
+  destroy
+    method: DELETE
+    path: /task_groups/:id
+    request: {}
+    response:
+      success: {message}
+      error: {message}
+
+
+
 Tasks
+
+******************************************************************************
+
+  Concerning Tasks#create & Tasks#update: 
+  when request include a non-nil :user_id, 
+  the task will be assigned to the given User, 
+  else assigned to the current user 
+
+******************************************************************************
+
   index
     method: GET
     path: /tasks
@@ -83,44 +142,3 @@ Tasks
     response:
       success: {message}
       error: {message}
-
-
-
-TaskGroups
-  index
-    method: GET
-    path: /task_groups
-    request: {}
-    response: 
-      success: [{id, description, owner_id, user_ids}, {id, description, owner_id, user_ids}]
-      error: {message}
-  show
-    method: GET
-    path: /task_groups/:d
-    request: {}
-    response: 
-      success: {id, description, owner_id, user_ids}
-      error: {message}
-  create
-    method: POST
-    path: /task_groups
-    request: {description, owner_id = nil, user_ids}
-    response:
-      success: {id, description, owner_id, user_ids}
-      error: {message}
-  update
-    method: PATCH
-    path: /task_groups/:id
-    request: {description, owner_id = nil, user_ids}
-    response:
-      success: {id, description, owner_id, user_ids}
-      error: {message}
-  destroy
-    method: DELETE
-    path: /task_groups/:id
-    request: {}
-    response:
-      success: {message}
-      error: {message}
-
-

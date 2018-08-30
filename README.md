@@ -40,6 +40,16 @@
 
 
 ## TaskGroups
+
+******************************************************************************
+
+  Concerning TaskGroups#create & TaskGroups#update: 
+  when request include a non-nil :owner_id, 
+  the group will be assigned to the given User, 
+  else assigned to the current user 
+
+******************************************************************************
+
   ### index
     method: GET
     path: /task_groups
